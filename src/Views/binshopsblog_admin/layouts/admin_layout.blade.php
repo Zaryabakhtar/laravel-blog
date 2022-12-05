@@ -86,7 +86,11 @@
     <main class="py-4">
         <div class="container">
             <div class='row full-width-div nav-bar-full'>
+                <div class='list-group-color'>
+                    @include("binshopsblog_admin::layouts.sidebar")
+                </div>
                 <div class='col-md-9 main-content'>
+
                     @if (isset($errors) && count($errors))
                         <div class="alert alert-danger">
                             <b>Sorry, but there was an error:</b>
