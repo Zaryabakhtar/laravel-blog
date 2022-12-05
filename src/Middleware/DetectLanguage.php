@@ -10,10 +10,9 @@ class DetectLanguage
 {
     public function handle($request, Closure $next)
     {
-        $lang = BinshopsLanguage::where('locale', $request->route('locale'))
+        $lang = BinshopsLanguage::where('locale', 'sv')
             ->where('active', true)
             ->first();
-
         if (!$lang){
             return abort(404);
         }

@@ -35,10 +35,9 @@ class BinshopsReaderController extends Controller
      * @param null $category_slug
      * @return mixed
      */
-    public function index($locale, Request $request, $category_slug = null)
-    {
+    public function index(Request $request, $category_slug = null)
+    {   
         // the published_at + is_published are handled by BinshopsBlogPublishedScope, and don't take effect if the logged in user can manageb log posts
-
         //todo
         $title = 'Blog Page'; // default title...
 
@@ -139,7 +138,7 @@ class BinshopsReaderController extends Controller
      * @param $blogPostSlug
      * @return mixed
      */
-    public function viewSinglePost(Request $request, $locale, $blogPostSlug)
+    public function viewSinglePost(Request $request, $blogPostSlug)
     {
         // the published_at + is_published are handled by BinshopsBlogPublishedScope, and don't take effect if the logged in user can manage log posts
         $blog_post = BinshopsPostTranslation::where([
