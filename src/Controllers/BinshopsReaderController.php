@@ -128,7 +128,7 @@ class BinshopsReaderController extends Controller
     public function view_category($hierarchy, Request $request)
     {
         $categories = explode('/', $hierarchy);
-        return $this->index($locale, $request, end($categories));
+        return $this->index('sv', $request, end($categories));
     }
 
     /**
