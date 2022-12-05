@@ -125,7 +125,7 @@ class BinshopsReaderController extends Controller
      * @param $category_slug
      * @return mixed
      */
-    public function view_category($locale, $hierarchy, Request $request)
+    public function view_category($hierarchy, Request $request)
     {
         $categories = explode('/', $hierarchy);
         return $this->index($locale, $request, end($categories));
