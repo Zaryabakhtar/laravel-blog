@@ -87,7 +87,7 @@
     </li>
 
 
-    <li class="list-group-item list-group-color  justify-content-between lh-condensed">
+    <li class="list-group-item list-group-color  justify-content-between lh-condensed d-none">
         <div>
             <h6 class="my-0"><a href="{{ route('binshopsblog.admin.images.upload') }}">Languages</a></h6>
 
