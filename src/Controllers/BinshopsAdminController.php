@@ -365,15 +365,15 @@ class BinshopsAdminController extends Controller
 
         $destinationPath = $this->image_destination_path();
 
-        if (file_exists($destinationPath.'/'.$post->image_large) && !null($post->image_large)) {
+        if (file_exists($destinationPath.'/'.$post->image_large) && $post->image_large != null) {
             unlink($destinationPath.'/'.$post->image_large);
         }
 
-        if (file_exists($destinationPath.'/'.$post->image_medium) && !null($post->image_medium)) {
+        if (file_exists($destinationPath.'/'.$post->image_medium) && $post->image_medium != null) {
             unlink($destinationPath.'/'.$post->image_medium);
         }
 
-        if (file_exists($destinationPath.'/'.$post->image_thumbnail) && !null($post->image_thumbnail)) {
+        if (file_exists($destinationPath.'/'.$post->image_thumbnail) && $post->image_thumbnail != null) {
             unlink($destinationPath.'/'.$post->image_thumbnail);
         }
 
