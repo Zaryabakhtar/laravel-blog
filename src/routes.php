@@ -87,7 +87,7 @@ Route::group(['middleware' => ['web'], 'namespace' => '\BinshopsBlog\Controllers
         });
 
 
-        Route::delete('/delete_post/{blogPostId}',
+        Route::post('/delete_post/{blogPostId}',
             'BinshopsAdminController@destroy_post')
             ->name('binshopsblog.admin.destroy_post');
 

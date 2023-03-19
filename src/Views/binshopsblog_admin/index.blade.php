@@ -80,9 +80,8 @@
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     Edit Post</a>
                 <form onsubmit="return confirm('Are you sure you want to delete this blog post?\n You cannot undo this action!');"
-                      method='post' action='{{route("binshopsblog.admin.destroy_post", $post->post_id)}}' class='float-right'>
+                      method='POST' action='{{route("binshopsblog.admin.destroy_post", $post->post_id)}}' class='float-right'>
                     @csrf
-                    <input name="_method" type="hidden" value="DELETE"/>
                     <button type='submit' class='btn btn-danger btn-sm'>
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                         Delete
@@ -94,8 +93,8 @@
         <div class='alert alert-warning'>No posts to show you. Why don't you add one?</div>
     @endforelse
 
-    {{--    <div class='text-center'>--}}
-    {{--        {{$posts->appends( [] )->links()}}--}}
-    {{--    </div>--}}
+    <div class='text-center'>
+        {{$posts->appends([])->links()}}
+    </div>
 
 @endsection
