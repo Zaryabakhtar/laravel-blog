@@ -94,7 +94,7 @@
     @endforelse
 
     <div class='text-center'>
-        {{$posts->appends([])->links()}}
+        {{$post_translations->appends([])->links()}}
     </div>
 
 @endsection
