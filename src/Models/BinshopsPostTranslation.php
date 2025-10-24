@@ -125,10 +125,14 @@ class BinshopsPostTranslation extends Model implements SearchResultInterface
         }
         $url = e($this->image_url($size));
         
-        // alt = image name without extension
+        // alt = image name without extension, size, or dimension suffix
         $path = parse_url($this->image_url($size), PHP_URL_PATH);
         $filename = pathinfo($path, PATHINFO_FILENAME);
-        $alt = e($filename);
+
+        // remove trailing size keywords or pixel dimensions like -600x400
+        $cleanName = preg_replace('/[-_](small|medium|large|thumbnail|\d+x\d+)$/i', '', $filename);
+
+        $alt = e($cleanName);
         
         $img = "<img src='$url' alt='$alt' class='" . e($img_class) . "' >";
         return $auto_link ? "<a class='" . e($anchor_class) . "' href='" . e($this->url( app()->getLocale() )) . "'>$img</a>" : $img;
