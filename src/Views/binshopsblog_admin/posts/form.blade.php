@@ -257,7 +257,7 @@
 </script>
 
 @if( config("binshopsblog.use_wysiwyg") && config("binshopsblog.echo_html"))
-    <script src="//cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
     <script>
         if( typeof(CKEDITOR) !== "undefined" ) {
