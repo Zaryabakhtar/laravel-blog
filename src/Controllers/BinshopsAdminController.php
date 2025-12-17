@@ -436,8 +436,9 @@ class BinshopsAdminController extends Controller
             if ($image_size_details['enabled'] && $photo = $request->get_image_file($size)) {
                 // this image size is enabled, and
                 // we have an uploaded image that we can use
+                $originalName = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME);
 
-                $uploaded_image = $this->UploadAndResize($new_blog_post, $new_blog_post->slug, $image_size_details, $photo);
+                $uploaded_image = $this->UploadAndResize($new_blog_post, $originalName, $image_size_details, $photo);
 
                 $new_blog_post->$size = $uploaded_image['filename'];
                 $uploaded_image_details[$size] = $uploaded_image;
